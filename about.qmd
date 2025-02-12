@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: profile.jpg
+image: /img/winton.jpg
 about:
   template: jolla
   links:
@@ -16,4 +16,4 @@ about:
 
 ---
 
-About this blog
+My name is Jiffy and this is my blog for CS451!

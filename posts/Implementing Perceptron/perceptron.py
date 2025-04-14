@@ -43,6 +43,11 @@ class LinearModel:
         return (scores > 0).float()
 
 class Perceptron(LinearModel):
+    """
+    Perceptron algorithm for classification using a linear decision boundary
+
+    Inherits LinearModel, and adds perceptron-specific loss function and gradient computation
+    """
     
     def loss(self, X, y):
         """
@@ -66,6 +71,21 @@ class Perceptron(LinearModel):
         return misclassified.mean()
     
     def grad(self, X, y):
+        """
+        Compute gradient of the misclassification loss with respect to model weight vector (w).
+
+        Identifies misclassified examples using modified labels (mapped from {0, 1} to {-1, 1})
+        and then computes the update vector based on those misclassifications.
+
+        ARGUMENTS:
+            X, torch.Tensor: the feature matrix. X.size() = (n, p), where n is number of data points,
+            and p is number of features. Assumes the last column is a bias term of 1s.
+
+            y, torch.Tensor: the target vector. y.size() = (n,). Entries should be 0 or 1.
+
+        RETURNS:
+            torch.Tensor: Vector of size (p,) representing the gradient update to be applied to w.
+        """
         score = X @ self.w
         y_ = 2 * y - 1
         misclassified = 1.0 * (y_ * score < 0).float()
@@ -79,14 +99,26 @@ class Perceptron(LinearModel):
         return torch.mean((- (misclassified * y_) * X), dim = 0)
 
 class PerceptronOptimizer:
+    """
+    Optimizer for the Perceptron class that computes gradient descent using misclassification losses.
+    """
 
     def __init__(self, model):
         self.model = model 
     
     def step(self, X, y):
         """
-        Compute one step of the perceptron update using the feature matrix X 
-        and target vector y. 
+        Compute one step of the perceptron update using the feature matrix X and target vector y. 
+        
+        Computes gradient on the full dataset and updates model weights accordingly.
+        Returns the current loss before update.
+
+        ARGUMENTS:
+            X, torch.Tensor: feature matrix. X.size() = (n, p).
+            y, torch.Tensor: target vector. y.size() = (n,). Labels in {0, 1}.
+
+        RETURNS:
+            float: Average misclassification rate before the update.
         """
         loss = self.model.loss(X, y)
         """

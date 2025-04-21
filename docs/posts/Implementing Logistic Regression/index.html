@@ -198,7 +198,7 @@ background-size: cover;
 
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>In this blog post, I implement logistic regression from scratch using PyTorch and apply it to both computer-generated and real-world data. I begin by developing a LogisticRegression class and GradientDescentOptimizer class that supports both vanilla gradient descent and momentum-based updates. Through a series of experiments, I analyzed the relationship of changing learning rates, momentum/beta rates, overfitting, and real-world datasets with the logistic regression algorithm. The experiments include generating 2D data for visualizing decision boundaries, a higher-dimensional overfitting case, and a real-world bot vs.&nbsp;user classification dataset from <a href="https://www.kaggle.com/datasets/juice0lover/users-vs-bots-classification">Kaggle</a>. Each experiment is paired with visualizations and reflections to illustrate key concepts of the blog post.</p>
+<p>In this blog post, I <a href="https://github.com/jiffylesica/jiffylesica.github.io/blob/94b09d610a8a8dd845162b6cd58ef98b3f6ccc51/posts/Implementing%20Logistic%20Regression/logistic.py">implement logistic regression</a> from scratch using PyTorch and apply it to both computer-generated and real-world data. I begin by developing a LogisticRegression class and GradientDescentOptimizer class that supports both vanilla gradient descent and momentum-based updates. Through a series of experiments, I analyzed the relationship of changing learning rates, momentum/beta rates, overfitting, and real-world datasets with the logistic regression algorithm. The experiments include generating 2D data for visualizing decision boundaries, a higher-dimensional overfitting case, and a real-world bot vs.&nbsp;user classification dataset from <a href="https://www.kaggle.com/datasets/juice0lover/users-vs-bots-classification">Kaggle</a>. Each experiment is paired with visualizations and reflections to illustrate key concepts of the blog post.</p>
 <div id="9bf8e5ce" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
@@ -415,21 +415,13 @@ Test Accuracy:  0.8233</code></pre>
 </section>
 <section id="in-this-section-i-analyze-a-real-world-dataset-containing-features-from-user-profiles-on-a-russian-social-media-platform-vkontakte.-the-goal-od-this-analysis-is-to-train-a-model-to-predict-whether-a-profile-is-a-bot-target-1-or-a-human-target-0.-i-implement-this-using-a-logistic-regression-model-with-gradient-descent-both-with-and-without-momentum.-the-analysis-includes-the-following-steps" class="level3">
 <h3 class="anchored" data-anchor-id="in-this-section-i-analyze-a-real-world-dataset-containing-features-from-user-profiles-on-a-russian-social-media-platform-vkontakte.-the-goal-od-this-analysis-is-to-train-a-model-to-predict-whether-a-profile-is-a-bot-target-1-or-a-human-target-0.-i-implement-this-using-a-logistic-regression-model-with-gradient-descent-both-with-and-without-momentum.-the-analysis-includes-the-following-steps">In this section, I analyze a <a href="https://www.kaggle.com/datasets/juice0lover/users-vs-bots-classification">real-world dataset</a> containing features from user profiles on a Russian social media platform, VKontakte. The goal od this analysis is to train a model to predict whether a profile is a bot (target = 1) or a human (target = 0). I implement this using a logistic regression model with gradient descent, both with and without momentum. The analysis includes the following steps:</h3>
-</section>
-<section id="data-preprocessing-all-feature-values-from-the-dataset-must-be-converted-to-numeric-values.-i-will-drop-column-entries-that-are-mostly-missing-as-well-as-data-entries-with-absent-values.-then-i-will-split-the-dataset-into-training-and-test-set-using-train-test-split-from-scikit-learn." class="level3">
-<h3 class="anchored" data-anchor-id="data-preprocessing-all-feature-values-from-the-dataset-must-be-converted-to-numeric-values.-i-will-drop-column-entries-that-are-mostly-missing-as-well-as-data-entries-with-absent-values.-then-i-will-split-the-dataset-into-training-and-test-set-using-train-test-split-from-scikit-learn.">1. Data preprocessing: All feature values from the dataset must be converted to numeric values. I will drop column entries that are mostly missing, as well as data entries with absent values. Then I will split the dataset into training and test set using train-test split from scikit learn.</h3>
-</section>
-<section id="feature-engineering" class="level3">
-<h3 class="anchored" data-anchor-id="feature-engineering">2. Feature engineering</h3>
-</section>
-<section id="train-the-model-fit-the-logistic-regression-model-using-gradient-descent-with-and-without-momentum." class="level3">
-<h3 class="anchored" data-anchor-id="train-the-model-fit-the-logistic-regression-model-using-gradient-descent-with-and-without-momentum.">3. Train the Model: Fit the logistic regression model using gradient descent with and without momentum.</h3>
-</section>
-<section id="visualize-results-plot-the-training-loss-data-across-gradient-descent-iterations-for-both-approaches-mentioned-in-step-3." class="level3">
-<h3 class="anchored" data-anchor-id="visualize-results-plot-the-training-loss-data-across-gradient-descent-iterations-for-both-approaches-mentioned-in-step-3.">4. Visualize Results: Plot the training loss data across gradient descent iterations for both approaches mentioned in step 3.</h3>
-</section>
-<section id="calculate-the-accuracy-of-the-model-on-test-data." class="level3">
-<h3 class="anchored" data-anchor-id="calculate-the-accuracy-of-the-model-on-test-data.">5. Calculate the accuracy of the model on test data.</h3>
+<ol type="1">
+<li>Data preprocessing: All feature values from the dataset must be converted to numeric values. I will drop column entries that are mostly missing, as well as data entries with absent values. Then I will split the dataset into training and test set using train-test split from scikit learn.</li>
+<li>Feature engineering</li>
+<li>Train the Model: Fit the logistic regression model using gradient descent with and without momentum.</li>
+<li>Visualize Results: Plot the training loss data across gradient descent iterations for both approaches mentioned in step 3.</li>
+<li>Calculate the accuracy of the model on test data.</li>
+</ol>
 </section>
 <section id="step-1-data-loading-and-preprocessing" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-data-loading-and-preprocessing">Step 1: Data Loading and Preprocessing</h3>

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jiffy Lesica">
+<meta name="dcterms.date" content="2025-05-17">
 
-<title>Abstract: – My Awesome CSCI 0451 Blog</title>
+<title>Double Descent in Overparameterized Regression – My Awesome CSCI 0451 Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,14 +167,26 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Abstract:</h1>
+      <h1 class="title">Double Descent in Overparameterized Regression</h1>
                       </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jiffy Lesica </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 17, 2025</p>
+      </div>
+    </div>
     
       
     </div>
@@ -189,7 +203,10 @@ background-size: cover;
 
 
 
-<p>In this blog post, I explore how feature complexity/quantity affects the performance of linear regression models, particularly in the context of overparameterized optimization. I begin the post by analyzing why the standard solution to regression fails at the interpolation threshold - where the number of features begins to exceed number of data observations. I then implemented an overparameterized linear regression model using the Moore-Penrose pseudoinverse to fit data - linked here - and assessed its ability to learn on 1D data and corrupted image data. By performing a sweep of potential feature numbers - generated with random nonlinear feature maps - I generated training and testing error curves which help clarify double descent through visualization. Specifically, my results show that while performance worsens around the interpolation threshold, it quickly improves as feature count increases beyond data observations, with my lowest testing error occurring with 200 features on a synthetic dataset with 100 observations.</p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract:</h2>
+<p>In this blog post, I explore how feature complexity/quantity affects the performance of linear regression models, particularly in the context of overparameterized optimization. I begin the post by analyzing why the standard solution to regression fails at the interpolation threshold - where the number of features begins to exceed number of data observations. I then implemented an overparameterized linear regression model using the Moore-Penrose pseudoinverse to fit data - linked <a href="https://github.com/jiffylesica/jiffylesica.github.io/blob/main/posts/Double%20Descent/logistic.py">here</a> - and assessed its ability to learn on 1D data and corrupted image data. By performing a sweep of potential feature numbers - generated with random nonlinear feature maps - I generated training and testing error curves which help clarify double descent through visualization. Specifically, my results show that while performance worsens around the interpolation threshold, it quickly improves as feature count increases beyond data observations, with my lowest testing error occurring with 200 features on a synthetic dataset with 100 observations.</p>
+</section>
 <section id="part-0" class="level2">
 <h2 class="anchored" data-anchor-id="part-0">Part 0</h2>
 <p>In the provided equation for finding the optimal weight vector in unregularized least-squares linear regression, problems arise when p &gt; n because it disrupts the invertability of the matrix X.</p>

@@ -308,9 +308,9 @@ window.Quarto = {
 <section id="mutation-methods" class="level3">
 <h3 class="anchored" data-anchor-id="mutation-methods">Mutation Methods:</h3>
 <p>One thing that we created in our vanilla EVO optimizer was a random mutation mechanism. This mutation mechanism let’s us assign a small probability that each of the weight’s entries’ values can be nudged by a certain amount positively or negatively. This nudge and its intensity is modeled by a normal distribution around the current value, and what we call “Mutation Intensity” is the standard deviation of that normal distribution. This ensures that we are constantly updating our weights randomly, and that there is a chance for weights to get better. What we noticed is that only using normal distribution might not be sufficient in achieving fast convergence. Because the normal distribution’s tails flatten with the X-axis quickly, it does not give the slightest opportunity for the model to get an aggressive nudge.</p>
-<p><img src="images/mutation/normal_dist.png" width="1500" style="display:block; margin:auto;"></p>
+<p><img src="images/mutation/normal_dist.png" width="900" style="display:block; margin:auto;"></p>
 <p>This led us to explore different distributions that also share the characteristic that ensures the nudge is usually not too aggressive, but also allows ever so rarely for it to change the weight’s entry significantly. This distribution that we introduced is the Laplacian distribution.</p>
-<p><img src="images/mutation/laplace_dist.png" width="1500" style="display:block; margin:auto;"></p>
+<p><img src="images/mutation/laplace_dist.png" width="900" style="display:block; margin:auto;"></p>
 <p>This became another hyperparameter that allows us to see how different mutation methods affect different models that our EVO optimizer tries to solve.</p>
 </section>
 </section>
@@ -402,19 +402,32 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="quantifying-diversity-and-diversity-based-loss">Quantifying Diversity and Diversity-Based Loss:</h3>
 <p>This section evaluates the effect of diversity-aware loss functions in evolutionary training of a neural network classifier on a subset of the MNIST handwritten dataset. We experimented with four diversity metrics - Euclidean Distance, Cosine Dissimilarity, Standard Deviation (STD) and variance - and measured their influence on test accuracy, cross-entropy loss, and diversity levels in our weight population over 200 generations. Additional hyperparameter tuning was performed for the Cosine diversity metric to explore how mutation rate, mutation intensity, population size, and diversity coefficient influence outcomes.</p>
 <p>The first experiment (figure 1) compared the test accuracy, loss, and normalized diversity across all four diversity metrics under a fixed training setup. All metrics enabled the model to reach between 75%-81% accuracy over 200 generations, with all other hyperparameters held constant. euclidean distance and STD slightly outperformed others in final diversity. All methods reduced loss substantially within 60 generations. When it came to Normalized diversity, all metrics except for, interestingly, cosine dissimilarity between weight vectors increased/maintained high diversity over time. Cosine dissimilarity diversity rapidly decayed to near-zero within 100 generations, while STD, variance and euclidean distance maintained high diversity levels, suggesting that cosine may be more prone to premature convergence or intrinsically mediates the impact of diverse weight populations.</p>
-<p><img src="images/NormalizeDiversity/output.png" width="1500" style="display:block; margin:auto;"></p>
-<p><em>Figure 1:</em> Comparing test accuracy, loss, and normalized diversity values for all 4 diversity metrics.</p>
+<p><img src="images/NormalizeDiversity/output.png" width="900" style="display:block; margin:auto;"></p>
+<div style="text-align: center; font-size: 0.8em; margin-top: 6px; margin-bottom: 6px">
+<pre><code>&lt;em&gt;Figure 1:&lt;/em&gt; Comparing test accuracy, loss, and normalized diversity values for all 4 diversity metrics.&lt;/p&gt;</code></pre>
+</div>
 <p>To better understand the behavior of the cosine dissimilarity metric, we ran additional training with varied diversity coefficients, population sizes, and mutation hyperparameters. The default hyperparameters used were population size 50, mutation rate 0.4, mutation intensity 0.5 and diversity coefficient 0.1. Increasing the diversity coefficient to 0.3 (figure 4) significantly improved diversity values - up to 0.2 - over each generation, confirming that the penalty term has a regulating effect on population diversity. When the diversity coefficient was set to 0.0 (figure 3), the model still trained to reasonable accuracy but showed completely flat diversity values, indicating the diversity term is implemented correctly to at least affect our metric value. Increasing population size to 100 (figure 5) improved diversity over each generation, especially in the first 100 generations, but did not substantially improve test accuracy. This suggests diminishing returns from larger populations in this setting. Raising mutation rate to 0.7 and intensity to 0.8 (figure 6) had a negligible to slightly positive impact on accuracy while maintaining diversity at moderate levels. Accuracy did experience more noisiness under these conditions, but ultimately achieved reasonable levels.</p>
-<p><img src="images/NormalizeDiversity/output1.png" width="1500" style="display:block; margin:auto;"></p>
+<p><img src="images/NormalizeDiversity/output1.png" width="900" style="display:block; margin:auto;"></p>
+<div style="text-align: center; font-size: 0.8em; margin-top: 6px; margin-bottom: 6px;">
 <p><em>Figure 2:</em> Baseline experiment outputs to provide reference test accuracy, loss, and diversity values for cosine driven loss.</p>
-<p><img src="images/NormalizeDiversity/output2.png" width="1500" style="display:block; margin:auto;"></p>
-<p><em>Figure 3:</em> Confirming working implementation of diversity coefficient’s effect on diversity based loss by setting diversity coefficient to 0.0</p>
-<p><img src="images/NormalizeDiversity/output4.png" width="1500" style="display:block; margin:auto;"></p>
-<p><em>Figure 4:</em> Results showing the effects of increased diversity coefficient of 0.3 - i.e.&nbsp;higher effect of diversity punishment/reward on loss - on test accuracy, loss, and diversity values.</p>
-<p><img src="images/NormalizeDiversity/output3.png" width="1500" style="display:block; margin:auto;"></p>
+</div>
+<p><img src="images/NormalizeDiversity/output2.png" width="900" style="display:block; margin:auto;"></p>
+<div style="text-align: center; font-size: 0.8em; margin-top: 6px; margin-bottom: 6px;">
+<p><em>Figure 3:</em> Confirming working implementation of diversity coefficient’s effect on diversity based loss by setting diversity coefficient to 0.0.</p>
+</div>
+<p><img src="images/NormalizeDiversity/output4.png" width="900" style="display:block; margin:auto;"></p>
+<div style="text-align: center; font-size: 0.8em; margin-top: 6px; margin-bottom: 6px">
+<em>Figure 4:</em> Results showing the effects of increased diversity coefficient of 0.3 - i.e.&nbsp;higher effect of diversity punishment/reward on loss - on test accuracy, loss, and diversity values.
+<p></p>
+</div>
+<p><img src="images/NormalizeDiversity/output3.png" width="900" style="display:block; margin:auto;"></p>
+<div style="text-align: center; font-size: 0.8em; margin-top: 6px; margin-bottom: 6px">
 <p><em>Figure 5:</em> Results for increased population size of 100 weight vectors on test accuracy, loss, and diversity values.</p>
-<p><img src="images/NormalizeDiversity/output5.png" width="1500" style="display:block; margin:auto;"></p>
+</div>
+<p><img src="images/NormalizeDiversity/output5.png" width="900" style="display:block; margin:auto;"></p>
+<div style="text-align: center; font-size: 0.8em; margin-top: 6px; margin-bottom: 6px">
 <p><em>Figure 6:</em> Results for impact of high mutation rate and mutation intensity on test accuracy, loss, and diversity values.</p>
+</div>
 <p>In summary, all four diversity metrics led to successful convergence and comparable final test accuracies, with euclidean distance and STD slightly ahead. Cosine dissimilarity driven diversity tends to descend quickly, requiring further parameter tuning to explore what it takes to keep diversity high. Enabling the diversity penalty to loss had a clear and measurable effect on both training behavior and final diversity levels, validating its implementation. Mutation and population hyperparameters affected convergence stability and final accuracy but had less influence than the choice of diversity metric.</p>
 <p>This study was constrained by computational limitations, which restricted the breadth of hyperparameter combinations we could explore. In particular, both the population size and the number of generations were limited in order to keep training time feasible. Larger populations and longer training schedules could potentially yield more robust insights into the effects of diversity-aware loss function. Further investigation into the behavior of cosine dissimilarity is warranted. Across multiple experiments we observed a consistent decline in diversity when using this metric. One possible explanation for this is that cosine dissimilarity only measures angular differences between vectors, ignoring their magnitudes. As a result, the population may converge to a set of similarly oriented but differently scaled vectors, which could be interpreted as low diversity by this metric. This limitation could implicitly constrain the optimizer’s ability to maintain variation during training, and future work could test this hypothesis more directly or explore hybrid metrics that include both angular and magnitude components. Additionally, we were limited in the size of training and test batches, which may influence generalization performance. It would be valuable to evaluate how increasing batch size or dataset subset size impact both diversity value and resulting model accuracy. Please note, all of these experiementes were run on a hybridized version of the evolution optimized DNNs which included, for every step of training one gradient descent step on each weight vector. This was done in hopes to reduce runtimes without straying too far from pure evolution. Pure evolution, we speculated, would have needed to require high data inputs, generation numbers, and population sizes to produce valuable results, which did not fit the computational capacities of our computers, nor our time constraints.</p>
 </section>
@@ -422,7 +435,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="final-mnist-results">Final MNIST Results:</h3>
 <p>After combining all of our implementations together, we trained a deep neural network with layers [764,32,10] to classify our MNIST dataset. We settled on the following hyperparameters:</p>
 <p>model.diversity_coeff = 0.2 optimizer = EvolutionOptimizer(model) optimizer.set_population_size(200) optimizer.use_backprop = False optimizer.set_survivors_ratio(0.1) optimizer.set_fitness_ratio(0.5) optimizer.set_sneaker_prob(0) optimizer.set_mutation_intensity(0.05) optimizer.mutation_rate = 0.05</p>
-<p><img src="images/final_accuracy/final_acuracy.png" width="1500" style="display:block; margin:auto;"></p>
+<p><img src="images/final_accuracy/final_acuracy.png" width="900" style="display:block; margin:auto;"></p>
 <p>The plot above shows that the accuracy rapidly increases during the early generations, indicating that the evolutionary algorithm quickly identifies promising weight vectors, significantly reducing the initial error. This is likely because the selection criteria is too strict so it rapidly eliminates poorly performing members of the population. The curve starts to smooth out, reflecting a deceleration in accuracy improvement as the optimizer converges on better solutions. After around 2000 generations, the accuracy curve stabilizes, indicating that the optimizer has reached a near-optimal solution for the given problem. The final accuracy appears to stabilize around 82%, suggesting that the current hyperparameter settings and genetic operators are effective but may have room for further optimization, possibly through adjustments to mutation rates, diversity coefficients, or parent selection mechanisms.</p>
 </section>
 </section>

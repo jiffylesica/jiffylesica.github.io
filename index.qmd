@@ -1,13 +1,49 @@
 ---
-title: "My Awesome CSCI 0451 Blog"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+title: "Welcome to my Portfolio"
+format: html
 page-layout: full
 ---
 
- 
+> # Hi there, I'm Jiffy!
+
+> *Having taken two years after high school to explore learning beyond the classroom, I entered college with a renewed appreciation for education - not just as an exchange of information, but as a mode of understanding our world through the stories we tell and inherit. I believe that narratives shape how we engage with one another, and that meaningful progress begins with curiosity grounded in compassion.<br><br>As a double major in Computer Science and Religion, I’ve developed a deep interdisciplinary interest in the ethical dimensions of technology, particularly Artificial Intelligence. I’m fascinated by how we encode human values into machines, and how these systems, in turn, may shape our moral landscapes. The bridge between technical systems and human meaning drives my passion for responsible computing and the future of AI.<br><br>Now stepping into post-grad life, I’m seeking opportunities that allow me to connect with intellectually and empathetically curious communities, contribute thoughtfully to shared challenges, and carry forward the stories I’m entrusted with.<br><br>This portfolio aims to showcase some of the work that I have done related to these interests. I hope you enjoy!*
+
+## Sections
+
+<!--Creates responsive grid layout of elements-->
+:::{.grid .justify-center}
+
+<!--Creates container which is element of grid (takes up 8/12 grid regions) -->
+:::{.g-col-8}
+
+<!-- Insert raw HTML block to include WHOLE CLICKCABLE card -->
+```{=html}
+<div class="card" onclick="location.href='posts/Machine%20Learning%20Blog%20Posts/index.html'" style="cursor: pointer;">
+  <img src="/img/section-imgs/Machine-Learning-img1.png" style="width:10%">
+  <h2> Machine Learning Blog Posts </h2>
+  <p> A collection of Blog Posts on Machine Learning Topics </p>
+</div>
+```
+:::
+
+::: {.g-col-8}
+```{=html}
+<div class="card" onclick="location.href='Religion%20Senior%20Research%20Project/index.html'" style="cursor: pointer;">
+  <img src="/img/section-imgs/opening-channels.png" style="width:10%">
+  <h2>Senior Project on Religion</h2>
+  <p>My research paper on religion, narrative, and devotional labor.</p>
+</div>
+```
+:::
+
+::: {.g-col-8}
+```{=html}
+<div class="card" onclick="location.href='Women%20Ethnography%20Religion%20Paper/index.html'" style="cursor: pointer;">
+  <img src="/img/section-imgs/opening-channels.png" style="width:10%">
+  <h2>Women Religion and Ethnography</h2>
+  <p>Ethnographic Research Paper</p>
+</div>
+```
+:::
+
+:::

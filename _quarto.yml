@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "My Awesome CSCI 0451 Blog"
+  title: "Jiffy Lesica Academic Portfolio"
   navbar:
     background: "#112a39"
     right:
@@ -15,7 +15,10 @@ website:
 
 format:
   html:
-    title-block-banner: img/landscape.png
+    # Instead of passing image url to title-block-banner, pass true
+    # This allows us to use title block space, while controlling style
+    # of image in styles.css file
+    title-block-banner: true
     title-block-banner-color: white
     theme: cosmo
     css: styles.css

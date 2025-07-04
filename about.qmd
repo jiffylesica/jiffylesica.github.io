@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: /img/winton.jpg
+image: /img/profile-pic1.JPEG
 about:
   template: jolla
   links:
@@ -15,5 +15,3 @@ about:
       href: https://github.com
 
 ---
-
-My name is Jiffy and this is my blog for CS451!

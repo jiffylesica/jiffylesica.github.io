@@ -1,0 +1,17 @@
+---
+title: "Opening Channels to the Divine"
+format: html
+page-layout: full
+---
+
+# Opening Channels to the Divine: Sacramental Labor and the Language of Christian Mysticism
+
+> *This section features my senior research project exploring religion, narrative, and devotional labor. The paper interrogates the layered landscape of Christian mysticism by critically examining mystical language as both a constitutive and expressive force. It foregrounds the inherent subjectivity of scholarship, asserting that any understanding of mystical texts is irrevocably shaped by the scholar’s own positionality. By engaging with the paradox of mysticism through mystical texts - where the ineffability of the Divine is both affirmed yet (to an extent) described - the study challenges reductive, literal theories of language, advocating instead for the transformative potential of language’s figurative dimension. Drawing on theoretical insights from figures such as Bernard McGinn, Charles Tillich, and Charles Taylor, it explores how mystical language does more than merely communicate: it actively broadens human experience and opens channels toward the Divine. This inquiry further problematizes the very definition of mysticism, noting that the term is as much an academic invention as it is a lived  experiential reality. Central is the claim that mystical authorship functions as a form of sacramental labor, where the act of writing works not only to articulate but also to open pathways towards sacred meaning. Ultimately, this study recommends a renewed scholarly approach that embraces the complex interplay of language, embodiment, and subjectivity in the pursuit of deeper religious understanding, a perspective that promises rich frames of view into both the human and the holy in the Christian mystical tradition.*
+
+
+## View the Full Paper
+
+<!-- Use iframe to embed PDF within page -->
+<iframe src="channels-to-divine.pdf" width="100%" height="800px"></iframe>
+
+[Download the PDF](channels-to-divine.pdf)

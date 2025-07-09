@@ -1,0 +1,13 @@
+---
+title: "Machine Learning Blog Posts"
+format: html
+page-layout: full
+listing:
+  contents: "."
+  sort: "date desc"
+  type: default
+---
+
+# Machine Learning Blog Posts
+
+A curated collection of my Machine Learning class projects and reports.

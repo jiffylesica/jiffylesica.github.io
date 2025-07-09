@@ -18,7 +18,7 @@ page-layout: full
 
 <!-- Insert raw HTML block to include WHOLE CLICKCABLE card -->
 ```{=html}
-<div class="card" onclick="location.href='posts/Machine%20Learning%20Blog%20Posts/index.html'" style="cursor: pointer;">
+<div class="card" onclick="location.href='machine-learning/index.html'" style="cursor: pointer;">
   <img src="/img/section-imgs/Machine-Learning-img1.png" style="width:10%">
   <h2> Machine Learning Blog Posts </h2>
   <p> A collection of Blog Posts on Machine Learning Topics </p>
@@ -28,7 +28,7 @@ page-layout: full
 
 ::: {.g-col-8}
 ```{=html}
-<div class="card" onclick="location.href='Religion%20Senior%20Research%20Project/index.html'" style="cursor: pointer;">
+<div class="card" onclick="location.href='religion-project/index.html'" style="cursor: pointer;">
   <img src="/img/section-imgs/opening-channels.png" style="width:10%">
   <h2>Senior Project on Religion</h2>
   <p>My research paper on religion, narrative, and devotional labor.</p>
@@ -38,7 +38,7 @@ page-layout: full
 
 ::: {.g-col-8}
 ```{=html}
-<div class="card" onclick="location.href='Women%20Ethnography%20Religion%20Paper/index.html'" style="cursor: pointer;">
+<div class="card" onclick="location.href='ethnography-paper/index.html'" style="cursor: pointer;">
   <img src="/img/section-imgs/opening-channels.png" style="width:10%">
   <h2>Women Religion and Ethnography</h2>
   <p>Ethnographic Research Paper</p>

@@ -1,17 +1,33 @@
 ---
 title: "About"
-image: /img/profile-pic1.JPEG
+image: /img/portfolio-about.JPG
 about:
-  template: jolla
+  template: solana
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com
-    - icon: github
-      text: Github
-      href: https://github.com
-
+  - icon: github
+    text: Github
+    href: https://github.com/jiffylesica
+  - icon: linkedin
+    text: LinkedIn
+    href: https://www.linkedin.com/in/griffin-lesica/
+  - icon: instagram
+    text: Instagram
+    href: https://www.instagram.com/jiffylesica/
+  - icon: envelope
+    text: griffinlesica@gmail.com
+    href: mailto:griffinlesica@gmail.com
+  - icon: phone
+    text: (203) 921-7501
+    href: tel:+12039217501
 ---
+Hi, I’m Jiffy (though if you're coming here from my resume or a job application, my name is *technically* 'Griffin'). I'm an interdisciplinary thinker and builder with a background in Computer Science and Religion, shaped by two formative gap years of exploration before college. I’m deeply interested in the intersection of technology, ethics, and human experience, and I strive to bring both analytical rigor and a humanistic lens to everything I build.
+
+I graduated Phi Beta Kappa from Middlebury College, where I explored topics ranging from ethical AI and fairness in machine learning to Christian mysticism and Islamic devotional labor. My research bridges code and culture, logic and narrative.
+
+On the technical side, I’m experienced in full-stack development, machine learning, parallel computing, and evolutionary algorithms. My projects spanning UAV payload R&D, deep learning with PyTorch, and building out my own digital travel logging platform (Almost all of which you can navigate to from my homepage!). On the creative side, I’m a photographer, pianist, and am passionate about storytelling.
+
+Collaboration and leadership are at the heart of my work. I was a varsity rower, leadership team member, and assistant coach for the Middlebury Crew Team - experiences that pushed me to learn to lead with humility, find synergy within team settings, and realize that the best way to make progress is together.
+
+I’m always looking for ways to connect seemingly distant dots—to build tools, stories, and systems that reflect both precision and care.
+
+Feel free to reach out!

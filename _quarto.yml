@@ -9,9 +9,11 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/jiffylesica
+      - icon: linkedin
+        href: https://www.linkedin.com/in/griffin-lesica/
+      - icon: instagram
+        href: https://www.instagram.com/jiffylesica/
 
 format:
   html:

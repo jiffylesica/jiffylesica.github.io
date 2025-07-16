@@ -23,8 +23,24 @@
 .margin-bottom-50 {margin-bottom: 50px;}
 .margin-top-50 {margin-top: 50px;}
 
-div.about-contents {
-  text-align: left !important;
-  max-width: 800px;
-  margin: auto;
+.card {
+  flex: 1;
+  /* Treat card as flexible container --> everything inside is a flex item */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  transition: transform 0.2s;
+  min-height: 300px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  align-self: center;
 }

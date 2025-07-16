@@ -1,7 +1,7 @@
 /* css styles */
 .quarto-title-banner {
     background-image: url('/img/DNN-Diagram.jpg');
-    background-size: contain; /* allows you to show whole image, contain image */
+    background-size: contain;
     background-repeat: repeat;
     background-position: center;
     height: 200px;

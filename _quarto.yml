@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Jiffy Lesica Academic Portfolio"
+  title: "Jiffy Lesica: Portfolio Junction"
   navbar:
     background: "#112a39"
     right:

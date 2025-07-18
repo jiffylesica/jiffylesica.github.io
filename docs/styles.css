@@ -8,39 +8,109 @@
     margin-bottom: 0px;
 }
 
+/* Card base styles */
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     border: 1px solid #aaa;
     border-radius: 10px;
     box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+    background-color: #ffffff;
     transition: transform 0.2s;
+    min-height: 300px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card:hover {
     transform: scale(1.05);
 }
 
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Utility classes */
 .margin-bottom-50 {margin-bottom: 50px;}
 .margin-top-50 {margin-top: 50px;}
 
-.card {
-  flex: 1;
-  /* Treat card as flexible container --> everything inside is a flex item */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  border: 1px solid #aaa;
-  border-radius: 10px;
-  box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
-  background-color: #ffffff;
-  transition: transform 0.2s;
-  min-height: 300px;
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .quarto-title-banner {
+        height: 150px;
+    }
+    
+    /* Ensure grid columns stack on mobile */
+    .g-col-6 {
+        grid-column: span 12 !important;
+        margin-bottom: 1rem;
+    }
+    
+    .card {
+        min-height: 250px;
+        padding: 15px;
+    }
+    
+    .card:hover {
+        transform: scale(1.02);
+    }
+    
+    .card img {
+        max-height: 150px;
+    }
+    
+    .card h2 {
+        font-size: 1.25rem;
+    }
+    
+    .card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust the intro text for better readability on mobile */
+    blockquote {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
 }
 
-.card img {
-  height: 200px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-  align-self: center;
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .quarto-title-banner {
+        height: 120px;
+    }
+    
+    .card {
+        min-height: 200px;
+        padding: 12px;
+    }
+    
+    .card img {
+        max-height: 120px;
+    }
+    
+    .card h2 {
+        font-size: 1.1rem;
+    }
+    
+    .card p {
+        font-size: 0.85rem;
+    }
 }
